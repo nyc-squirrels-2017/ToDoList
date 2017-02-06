@@ -1,0 +1,10 @@
+<div>
+    <h1>User login</h1>
+    <%= erb :"/partials/_errors" %>
+    <form action="/sessions" method="post">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="Login">
+        <a href="/">Cancel</a>
+    </form>
+</div>

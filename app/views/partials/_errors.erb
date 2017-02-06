@@ -1,9 +1,9 @@
-<% if @user %>
+<% if @errors %>
 
   <div>
     <h4>Error..</h4>
     <ul>
-      <% @user.errors.full_messages.each do |error| %>
+      <% @errors.each do |error| %>
       <li> <%= error %></li>
       <% end %>
     </ul>
