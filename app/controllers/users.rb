@@ -20,7 +20,9 @@ end
 get '/users/:id' do
   require_user
   current_user.id == params[:id]
-  @completed_tasks = current_user.tasks.find_by(completed:true)
+  @completed_tasks = current_user.tasks.where(completed:true)
+  @lists = current_user.lists.all
+  @tasks = Task.find_by(id: params[:id])
   erb :'/users/show'
 end
 

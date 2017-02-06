@@ -5,14 +5,9 @@
 
   <form action="/lists/<%=@list.id%>/tasks/<%=@task.id%>" method="POST">
     <input type="hidden" name="_method" value="put">
-    <p>
-      <label for="task">Task:</label>
+
+      <input type="checkbox" name="task[completed]" value="true"><label for="task">Task:</label>
       <input type="text" name="task[task]" placeholder="Please enter your task" required size="30">
-    </p>
-
-    <p>
       <input type="submit" name="submit" value="Edit Task">
-    </p>
-
   </form>
 </div>

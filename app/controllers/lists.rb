@@ -1,5 +1,5 @@
 get '/lists' do
-  @lists = current_user.lists.all
+  @lists = current_user.lists
   erb :'/lists/index'
 end
 

@@ -1,7 +1,8 @@
 <div class = "list-container">
+<h3>Here are Your List of To-Dos:</h3>
 <ol>
-  <%current_user.lists.each do |list| %>
-    <li><a href="/lists/<%=list.id%>"><%=list.name%></a></li><br>
+  <%@lists.each do |list| %>
+  <li><a href="/lists/<%=list.id%>"><%=list.name%></a></li><br>
   <%end%>
 </ol>
 </div>
