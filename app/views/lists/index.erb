@@ -1,6 +1,10 @@
 <section class='list-lists'>
 </div class="add-list">
+<% if login? %>
   <a href="/lists/new"><button id="new-list-button">Add a list</button></a>
+  <%else%>
+  <p class=sign-in> Sign in to Add a List!</p>
+  <%end%>
   <!-- <div class="hide">
      <%= erb :'partials/_new_list' %>
   </div> -->
