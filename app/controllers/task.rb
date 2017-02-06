@@ -15,7 +15,16 @@ get '/lists/:l_id/tasks/new' do
 end
 
 post '/lists/:l_id/tasks' do
+  @list = List.find_by_id(params[:l_id])
 
+  @task = @list.tasks.new(params[:task])
+  @task.save
+  if @task.save
+    redirect "/lists/#{@list.id}"
+  else
+    @errors = @task.errors.full_messages
+    erb :"/tasks/new"
+  end
 end
 
 # update
