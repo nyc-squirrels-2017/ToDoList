@@ -1,0 +1,9 @@
+<div>
+  <h1>List: <%= @list.name.capitalize %></h1>
+  <h3>Tasks</h3>
+  <ol>
+    <% @list.tasks.each do |task|  %>
+    <li> <%= task.name %></li>
+    <% end %>
+  </ol>
+</div>

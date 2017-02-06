@@ -4,7 +4,13 @@
   <ol>
     <% if @lists %>
       <% @lists.each do |list| %>
-        <li> <%= list.name.capitalize %> </li>
+        <li>
+          <a href="/lists/<%= list.id %>"> <%= list.name.capitalize %> </a>
+          <ul>
+            <li><a href="/lists/<%= list.id %>/edit">edit</a></li>
+            <li><a href="/lists/<%= list.id %>/delete">delete</a></li>
+          </ul>
+        </li>
       <% end %>
     <% end %>
   </ol>

@@ -1,0 +1,9 @@
+<div>
+  <h1>Edit list</h1>
+  <%= erb :"/partials/_errors" %>
+  <form action="/lists" method="post">
+    <input type="text" name="list[name]" value="<%= @list.name %>">
+    <input type="submit" value="Edit list">
+    <a href="/lists">Cancel</a>
+  </form>
+</div>
