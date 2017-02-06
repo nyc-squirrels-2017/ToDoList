@@ -1,4 +1,4 @@
-before '/lists' do
+before '/lists*' do
   require_login
 end
 
