@@ -44,5 +44,6 @@ end
 
 # delete
 delete '/lists/:l_id/tasks/:id' do
-
+  Task.find_by_id(params[:id]).destroy
+  redirect "/lists/#{@list.id}"
 end
