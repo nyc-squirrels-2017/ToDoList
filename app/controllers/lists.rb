@@ -17,18 +17,22 @@ post '/lists' do
   end
 end
 
-get '/lists/:id' do
-  @list = current_user.lists.find_by(id: params[:id])
+before '/lists/:list_id*' do
+  @list = current_user.lists.find_by(id: params[:list_id])
+end
+
+get '/lists/:list_id' do
+  # @list = current_user.lists.find_by(id: params[:id])
   erb :'/lists/show'
 end
 
-get '/lists/:id/edit' do
-  @list = current_user.lists.find_by(id: params[:id])
+get '/lists/:list_id/edit' do
+  # @list = current_user.lists.find_by(id: params[:id])
   erb :'/lists/edit'
 end
 
-put '/lists/:id/edit' do
-  @list = current_user.lists.find_by(id: params[:id])
+put '/lists/:list_id/edit' do
+  # @list = current_user.lists.find_by(id: params[:id])
   if @list.update(params[:list])
     redirect '/lists/#{@list.id}'
   else
@@ -37,8 +41,8 @@ put '/lists/:id/edit' do
   end
 end
 
-delete '/lists/:id' do
-  @list = current_user.lists.find_by(id: params[:id])
+delete '/lists/:list_id' do
+  # @list = current_user.lists.find_by(id: params[:id])
   @list.destroy
   redirect '/lists'
 end
