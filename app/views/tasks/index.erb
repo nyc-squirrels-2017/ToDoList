@@ -2,6 +2,6 @@
 <a href="/lists/<%= @list.id %>/tasks/new">create new</a>
 <ol>
   <% @list.tasks.each do |task|  %>
-    <%= erb :"/tasks/show" %>
+    <%= erb :"/tasks/show", locals: { task: task } %>
   <% end %>
 </ol>

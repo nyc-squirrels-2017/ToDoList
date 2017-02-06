@@ -1,0 +1,12 @@
+<div>
+  <h1>Create new task</h1>
+  <form action="" method="">
+    <label for="task">Task: </label>
+    <input id="task" type="text" name="task[name]" placeholder="New Task"><br><br>
+    <label for="due_date">Due Date: </label>
+    <input id="due_date" type="date" name="task[due_date]">
+    <input type="hidden" name="task[user]" value="<%= current_user.id %>">
+    <input type="submit" value="Create task">
+    <a href="/lists/<%= @list.id %>">Cancel</a>
+  </form>
+</div>

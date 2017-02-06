@@ -4,13 +4,14 @@ get '/lists/:l_id/tasks' do
 end
 
 # show
-get '/lists/:l_id/tasks/:id' do
-
-end
+# get '/lists/:l_id/tasks/:id' do
+#
+# end
 
 # new
 get '/lists/:l_id/tasks/new' do
-
+  @list = List.find_by_id(params[:l_id])
+  erb :"/tasks/new"
 end
 
 post '/lists/:l_id/tasks' do
