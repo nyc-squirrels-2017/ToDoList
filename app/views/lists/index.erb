@@ -1,0 +1,11 @@
+<div>
+  <h1>All your lists</h1>
+  <a href="">Create New List</a>
+  <ol>
+    <% if @lists %>
+      <% @lists.each do |list| %>
+        <li> <%= list.name.capitalize %> </li>
+      <% end %>
+    <% end %>
+  </ol>
+</div>
