@@ -14,15 +14,15 @@ list1 = ben.lists.create({
 
 
 list1.tasks.create({
-  description: "Buy groceries"
+  description: "Stop zombie apocalypse"
   })
 
 list1.tasks.create({
-  description: "Do laundry"
+  description: "Shut down SkyNet"
   })
 
 list1.tasks.create({
-  description: "Babysit nephew"
+  description: "Redirect catastrophic meteorite"
   })
 
 list1.tasks.create({
@@ -34,7 +34,7 @@ list2 = ben.lists.create({
     })
 
 list2.tasks.create({
-  description: "Run 4000 miles"
+  description: "Run 40 laps around the Sun"
   })
 
 list2.tasks.create({
@@ -42,5 +42,5 @@ list2.tasks.create({
   })
 
 list2.tasks.create({
-  description: "Pectoral Flies to clear the Skies"
+  description: "Pectoral Flies to Clear the Skies"
   })

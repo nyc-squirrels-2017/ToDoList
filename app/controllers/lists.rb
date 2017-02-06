@@ -12,6 +12,11 @@ get "/lists/:id" do
   erb :'/lists/show'
 end
 
+get "/lists/:id/edit" do
+  @list = List.find_by(id: params[:id])
+  erb :'/lists/edit'
+end
+
 post '/lists' do
   list = List.new(params[:list])
   list.user_id = session[:user_id]
@@ -21,4 +26,16 @@ post '/lists' do
     @errors = list.errors.full_messages
     erb :'/lists/new'
   end
+end
+
+put '/lists/:id' do
+  list = List.find_by(id: params[:id])
+  list.update(params[:list])
+  redirect "/lists/#{params[:id]}"
+end
+
+delete '/lists/:id' do
+  list = List.find_by(id: params[:id])
+  list.destroy()
+  redirect '/lists'
 end

@@ -1,0 +1,6 @@
+<form class="" action="/lists/<%=@list.id%>/tasks/<%=@task.id%>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="task">Description</label>
+  <input type="text" name="task[description]" id="task">
+  <input type="submit" value="Update">
+</form>
