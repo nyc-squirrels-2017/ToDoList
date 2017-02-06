@@ -10,8 +10,3 @@
         <a href="/lists/<%= @list.id %>/edit">Edit your list</a>
       <% end %>
 </div>
-<div class="add-task">
-  <% if current_user == @list.user %>
-        <a href="/lists/<%=@list.id%>/tasks/new">Add a task</a>
-      <% end %>
-</div>
