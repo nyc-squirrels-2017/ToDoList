@@ -12,7 +12,7 @@ html, body {
 }
 
 nav {
-    border: 2px solid #444;
+    border-bottom: 2px solid #444;
 }
 
 #brand {
@@ -45,4 +45,43 @@ nav li span {
 nav li.right {
     float: right;
     margin: 5px;
+}
+
+.lists-cards {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.card {
+  display: flex;
+  /*align-items: center;*/
+  float: left;
+  border: 5px solid #444;
+  margin: 40px 10px;
+  min-height: 200px;
+  width: 200px;
+  transition: 1.0s;
+}
+
+.hidden {
+  display: none;
+}
+
+.margin {
+  margin-top: 10px;
+}
+
+.card a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  min-height: 200px;
+  width: 200px;
+}
+
+.card p {
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
 }
