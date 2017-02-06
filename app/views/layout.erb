@@ -20,16 +20,14 @@
 <body>
   <% if !login? %>
   <ul>
-    <li>
-      <a href="/session/login"> Log in Here </a><br>
-      <a href="/users/new">Sign Up</a>
-    </li>
+    <li id="log-in-link"><a href="/session/login"> Log in Here </a></li><br>
+    <li id="sign-up-link"><a href="/session/login">Sign Up</a></li>
   </ul>
 <% else %>
 <ul>
   <li><a href="/session/logout">Log Out</a></li><br>
     <li><a href="/lists"> View Lists</a></li><br>
-    <li><a href="/lists/new"> Create a New List</a></li>
+    <li><a href="/lists/new" > Create a New List</a></li>
 </ul>
 
   <%end%>
