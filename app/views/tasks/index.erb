@@ -1,0 +1,27 @@
+<div class="task-list">
+  <%@list.tasks.each do |task| %>
+  <div class="complete">
+    <%=task.task%>
+<!--     <%if task.completed=false%> -->
+          <form method="post" action="/tasks/<%=task.id %>">
+        <input type="hidden" name="_method" value="put">
+        <button type="submit" id="completed">Complete task</button>
+      </form>
+
+<!--     <%else%> -->
+<!--     <p>
+      Completed
+    </p> -->
+<!--       <%end%> -->
+  <%end%>
+  </div>
+</div>
+
+
+
+<!-- online example
+p.bool = !params[:bool].nil?
+  %input{:type => 'checkbox', :name => 'bool', :value => "#{@bool}", :checked => @p.bool}
+ -->
+<!--   <form>
+  <input type ="checkbox", name="complete"></input> -->

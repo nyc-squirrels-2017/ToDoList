@@ -1,0 +1,16 @@
+<section class='list-lists'>
+</div class="add-list">
+  <a href="/lists/new"><button id="new-list-button">Add a list</button></a>
+  <!-- <div class="hide">
+     <%= erb :'partials/_new_list' %>
+  </div> -->
+  <br>
+  <div>
+    <% @lists.each do |list| %>
+      <ul>
+        <br>
+        <li><a href="/lists/<%= list.id%>"><%=list.name%></a></li>
+      </ul>
+      </div>
+      <% end %>
+  </section>

@@ -1,0 +1,21 @@
+<% if current_user %>
+  <form id="edit_form" method="post" action="/lists/<%=@list.id%>">
+    <input type="hidden" name="_method" value="put">
+    <label for="edit_list">List</label>
+     <div class="">
+        <textarea rows="4" cols="50" name="list[name]" placeholder="Change your list"></textarea>
+     </div>
+    <button type="submit">Update</button>
+  </form>
+
+  <form id="delete_form" method="post" action="/lists/<%=@list.id%>">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">Delete</button>
+  </form>
+
+<% else %>
+
+  <a href="/lists/<%= @list.id%>">Sorry You Cannot Edit This List</a>
+
+<% end %>
+

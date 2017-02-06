@@ -1,0 +1,14 @@
+<% if current_user == @list.user %>
+<h4>Add a task to your <%=@list.name.capitalize%> list </h4>
+
+ <div class="new-task">
+  <form class ="" method="post" action="/lists/<%=@list.id%>/tasks">
+    <div class="">
+    <label for="task">Task:</label>
+    <input type="text" id="task" name="task"></input>
+    </div>
+    <input type="submit" class="button" value="Add a task">
+
+  </form>
+</div>
+<% end %>

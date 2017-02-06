@@ -1,0 +1,12 @@
+<h1>Hi <%= @user.username.capitalize %>!</h1>
+
+<div>
+<p> Here are your lists:
+</p>
+<ul>
+        <% @user.lists.each do |list| %>
+        <li><a href="/lists/<%=list.id%>"><%= list.name %></a></li>
+        <% end %>
+      </ul>
+
+</div>
