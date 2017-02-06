@@ -1,5 +1,6 @@
 get '/users' do
-    erb :"/users/index"
+    require_login
+    redirect "/users/#{current_user.id}"
 end
 
 get '/users/register' do
@@ -17,3 +18,9 @@ post '/users' do
       erb :"/users/new"
     end
 end
+
+get '/users/:id' do
+   require_login
+   erb :"users/show" 
+end
+
