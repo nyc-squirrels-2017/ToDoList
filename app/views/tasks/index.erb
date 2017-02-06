@@ -1,6 +1,7 @@
 <h3>Tasks</h3>
+<a href="/lists/<%= @list.id %>/tasks/new">create new</a>
 <ol>
   <% @list.tasks.each do |task|  %>
-  <li> <%= task.name %></li>
+    <%= erb :"/tasks/show" %>
   <% end %>
 </ol>

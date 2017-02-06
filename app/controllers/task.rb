@@ -1,32 +1,32 @@
 # index
-get '/lists/:id/tasks' do
-  redirect "/lists/#{params[:id]}"
+get '/lists/:l_id/tasks' do
+  redirect "/lists/#{params[:l_id]}"
 end
 
 # show
-get '/lists/:id/tasks/:id' do
+get '/lists/:l_id/tasks/:id' do
 
 end
 
 # new
-get '/lists/:id/tasks/new' do
+get '/lists/:l_id/tasks/new' do
 
 end
 
-post '/lists/:id/tasks' do
+post '/lists/:l_id/tasks' do
 
 end
 
 # update
-get '/lists/:id/tasks/:id/edit' do
+get '/lists/:l_id/tasks/:id/edit' do
 
 end
 
-put '/lists/:id/tasks/:id' do
+put '/lists/:l_id/tasks/:id' do
 
 end
 
 # delete
-delete '/lists/:id/tasks/:id' do
-  
+delete '/lists/:l_id/tasks/:id' do
+
 end
