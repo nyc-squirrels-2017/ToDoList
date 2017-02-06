@@ -1,6 +1,7 @@
 <div>
     <h1>Register new user</h1>
-    <form action="" method="">
+    <%= erb :"/partials/_errors" %>
+    <form action="/users" method="post">
         <input type="text" name="user[username]" placeholder="Username">
         <input type="text" name="user[email]" placeholder="Email">
         <input type="password" name="user[password]" placeholder="Password">
