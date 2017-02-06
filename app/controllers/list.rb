@@ -12,3 +12,14 @@ get '/lists/new' do
 
   erb :"/lists/new"
 end
+
+post '/lists' do
+  list = current_user.lists.create(params[:list])
+
+  if list.save
+    redirect '/lists'
+  else
+    @errors = list.errors.full_messages
+    erb :"/lists/new"
+  end
+end
