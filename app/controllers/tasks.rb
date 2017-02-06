@@ -21,7 +21,7 @@ post '/lists/:id/tasks' do
 end
 
 get '/lists/:list_id/tasks/:id' do
-  @list = current_user.lists.find_by(id: params[:id])
+  @list = current_user.lists.find_by(id: params[:list_id])
   @task = Task.find_by(id: params[:id])
   erb :'/tasks/show'
 end
@@ -30,6 +30,12 @@ get '/lists/:list_id/tasks/:id/edit' do
   @list = current_user.lists.find_by(id: params[:list_id])
   @task = Task.find_by(id: params[:id])
   erb :'/tasks/edit'
+end
+
+get '/lists/:list_id/tasks/:id/complete' do
+  @list = current_user.lists.find_by(id: params[:list_id])
+  @task = Task.find_by(id: params[:id])
+
 end
 
 put '/lists/:list_id/tasks/:id' do

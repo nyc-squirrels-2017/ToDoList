@@ -1,7 +1,8 @@
 <h2>Tasks in <%=@list.name%>:</h2>
 <ol>
   <%@list.tasks.each do |task|%>
-  <li><a href="/lists/<%=@list.id%>/tasks/<%=task.id%>"><%=task.task%></li><br>
+<li>
+<a href="/lists/<%=@list.id%>/tasks/<%=task.id%>"><%=task.task%></li><br>
   <%end%>
 </ol>
 

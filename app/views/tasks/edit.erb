@@ -3,7 +3,7 @@
   <%= erb :'/partials/_errors'%>
   <h1> Edit Task <%=@task.task%> </h1>
 
-  <form action="/lists/<%=@list.id%>/tasks" method="POST">
+  <form action="/lists/<%=@list.id%>/tasks/<%=@task.id%>" method="POST">
     <input type="hidden" name="_method" value="put">
     <p>
       <label for="task">Task:</label>
