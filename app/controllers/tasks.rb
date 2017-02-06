@@ -1,38 +1,42 @@
-before do
-  require_user
+get '/lists/:id/tasks' do
   @list = current_user.lists.find_by(id: params[:id])
-  @task = current_user.@list.tasks.find_by(id: params[:id])
-end
-
-get '/tasks' do
-  @tasks = current_user.tasks.all
   erb :'/tasks/index'
 end
 
-get '/tasks/new' do
+get '/lists/:id/tasks/new' do
+  @list = current_user.lists.find_by(id: params[:id])
+  @task = Task.new
   erb :'/tasks/new'
 end
 
-post '/tasks' do
+post '/lists/:id/tasks' do
+  @list = current_user.lists.find_by(id: params[:id])
+  @task = @list.tasks.new(params[:task])
   if @task.save
-    redirect '/tasks'
+    redirect "/lists/#{@list.id}/tasks"
   else
-    @errors = list.errors.full_messages
+    @errors = @task.errors.full_messages
     erb :'/tasks/new'
   end
 end
 
-get '/tasks/:id' do
+get '/lists/:list_id/tasks/:id' do
+  @list = current_user.lists.find_by(id: params[:id])
+  @task = Task.find_by(id: params[:id])
   erb :'/tasks/show'
 end
 
-get '/tasks/:id/edit' do
+get '/lists/:list_id/tasks/:id/edit' do
+  @list = current_user.lists.find_by(id: params[:list_id])
+  @task = Task.find_by(id: params[:id])
   erb :'/tasks/edit'
 end
 
-put '/tasks/:id/edit' do
-  if @task.update(params[:list])
-    redirect '/tasks/#{@task.id}'
+put '/lists/:list_id/tasks/:id' do
+  @list = current_user.lists.find_by(id: params[:list_id])
+  @task = Task.find_by(id: params[:id])
+  if @task.update(params[:task])
+    redirect "/lists/#{@list.id}/tasks/#{@task.id}"
   else
     @errors = @list.errors.full_messages
     erb :'/tasks/edit'

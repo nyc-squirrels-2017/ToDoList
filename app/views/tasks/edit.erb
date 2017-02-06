@@ -1,0 +1,18 @@
+<div class="edit-task">
+
+  <%= erb :'/partials/_errors'%>
+  <h1> Edit Task <%=@task.task%> </h1>
+
+  <form action="/lists/<%=@list.id%>/tasks" method="POST">
+    <input type="hidden" name="_method" value="put">
+    <p>
+      <label for="task">Task:</label>
+      <input type="text" name="task[task]" placeholder="Please enter your task" required size="30">
+    </p>
+
+    <p>
+      <input type="submit" name="submit" value="Edit Task">
+    </p>
+
+  </form>
+</div>
