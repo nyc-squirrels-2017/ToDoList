@@ -1,0 +1,22 @@
+<div class = "show-container">
+<h1><strong><%=current_user.username.capitalize%></strong></h1>
+
+<h3> Here is Your Profile Information:</h3>
+<p>Username: <%=current_user.username%></p>
+<p>Email Address: <%=current_user.email%></p>
+
+<h3>Here are Your List of To-Dos:</h3>
+<%=erb :'/lists/index'%>
+
+<h3>Here are your list of completed tasks:</h3>
+<%if @completed_tasks%>
+  <ul><%current_user.completed_tasks.each do |task|%>
+    <li><%=task.task%></li>
+  </ul>
+  <%end%>
+<%else%>
+  <p>You have not completed any tasks :( </p>
+<%end%>
+
+
+</div>

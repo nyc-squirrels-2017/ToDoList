@@ -1,0 +1,11 @@
+<div class = "one-list">
+<h1><%=@list.name%></h1>
+
+<h2>Tasks in <%=@list.name%>:</h2>
+<ol>
+  <%@list.tasks.each do |task|%>
+  <li><%=task.task%></li><br>
+  <%end%>
+</ol>
+<a href="/lists/<%=@list.id%>/edit">Edit List</a>
+</div>

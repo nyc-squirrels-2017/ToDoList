@@ -1,0 +1,26 @@
+<div class="new-user">
+
+  <%= erb :'/partials/_errors'%>
+  <h1> Register </h1>
+
+  <form action="/users" method="POST">
+    <p>
+      <label for="username">Username:</label>
+      <input type="text" name="user[username]" placeholder="Please enter your username" required size="30">
+    </p>
+
+    <p>
+      <label for="email">Email</label>
+      <input type="text" name="user[email]" placeholder="Please enter your email address" required size="30">
+    </p>
+
+    <p>
+      <label for="password">Password</label>
+      <input type="password" name="user[password]" placeholder="Please enter your password" required size="30">
+    </p>
+
+    <p>
+      <input type="submit" name="submit" value="Register">
+    </p>
+  </form>
+</div>
