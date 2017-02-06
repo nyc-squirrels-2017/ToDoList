@@ -1,0 +1,7 @@
+
+LIST EDIT PAGE
+<form class="new-list-form" action="/lists/<%=@list.id%>/edit" method="post">
+  <input name="_method" type="hidden" value="PUT">
+  <input type="text" name="lists[name]" placeholder="New Name">
+  <input type="submit"  value="Edit">
+</form>

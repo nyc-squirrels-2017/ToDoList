@@ -3,8 +3,10 @@
   <h1>All of Our Lists</h1>
   <%@lists.each do |list|%>
   <ul>
-    <li><a href="/lists/<%=list.id%>"><%=list.name %></a></li>
-
+    <li><a href="/lists/<%=list.id%>"><%=list.name%></a></li>
+    <h4><a href="/lists/<%=list.id%>/tasks/new">Add a task to <%=list.name%></a></h4>
+    <h4><a href="lists/<%= list.id%>/edit"> Edit <%=list.name%> list</a></h4>
+    <hr>
   </ul>
   <%end %>
   </div>
