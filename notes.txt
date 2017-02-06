@@ -1,0 +1,35 @@
+## Schema
+
+# Users
+    id
+    username
+    email
+    password_digest
+    
+# Lists
+    id
+    name
+    user_id
+
+# Tasks
+    id
+    name
+    complete
+    due_date
+    user_id
+    list_id
+    
+_______
+## Association
+
+# Users
+    Has many lists
+    Has many new tasks
+
+# Lists
+    Belongs to users
+    Has many tasks
+
+# Tasks
+    Belongs to a lists
+    Belongs to a User
