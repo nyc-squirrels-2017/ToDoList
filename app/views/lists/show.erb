@@ -1,12 +1,18 @@
 <div class="list">
   <h2> <%=@list.name%></h2>
-
+<p> This is <%=@list.user.username%>'s list </p>
+<p> You can try to mess with my routes all you want, but you will not prevail!</p>
+<br>
   <%= erb :'tasks/index' %>
-
+<br>
+<br>
+<div id=add-task>
    <%= erb :'tasks/new' %>
+ </div>
   <br>
-  <br>
+<div class=edit>
   <% if current_user == @list.user %>
         <a href="/lists/<%= @list.id %>/edit">Edit your list</a>
       <% end %>
+  </div>
 </div>

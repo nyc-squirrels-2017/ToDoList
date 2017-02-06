@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if authorized?(@list.user_id) %>
   <form id="edit_form" method="post" action="/lists/<%=@list.id%>">
     <input type="hidden" name="_method" value="put">
     <label for="edit_list">List</label>
@@ -14,8 +14,7 @@
   </form>
 
 <% else %>
-
-  <a href="/lists/<%= @list.id%>">Sorry You Cannot Edit This List</a>
+<h1>NICE TRY!!!!!!! But this route is protected!!!!!!!</h1>
+  <a href="/lists/<%= @list.id%>">Back to the list you cannot edit</a>
 
 <% end %>
-

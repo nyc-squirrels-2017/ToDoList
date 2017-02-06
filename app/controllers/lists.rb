@@ -27,6 +27,7 @@ get '/lists/:id' do
 end
 
 get '/lists/:id/edit' do
+  
   @list = List.find(params[:id])
   erb :'/lists/edit'
 end
@@ -46,6 +47,3 @@ delete '/lists/:id' do
   @list.delete
   redirect '/lists'
 end
-
-
-

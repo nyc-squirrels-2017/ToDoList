@@ -13,11 +13,27 @@ section {
   margin: 20px;
 }
 
+.edit{
+  margin-left: 10%;
+}
+
+#add-task{
+  width: 20%;
+  padding:20px;
+  margin:auto;
+  border: 1px solid black;
+  /*float: right;
+  padding-right: 200px*/
+}
+
 nav {
   background-color: #f4c6be;
   padding: 10px;
 }
 
+.list{
+  margin-left:100px;
+}
 .sign-in{
   text-align: center;
   font-family: 'Open Sans', sans-serif;

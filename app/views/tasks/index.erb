@@ -2,8 +2,8 @@
   <ol>
   <%@list.tasks.each do |task| %>
   <div class="complete">
-  <li>  <%=task.task%>
-    <%if login?%>
+  <li>  <%=task.task.capitalize%>
+    <% if authorized?(:id) %>
   <form method="post" action="/tasks/<%=task.id %>">
     <input type="hidden" name="_method" value="put">
     <button type="submit" id="completed">Complete task</button>
