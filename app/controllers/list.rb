@@ -38,10 +38,19 @@ get '/lists/:id/edit' do
 end
 
 put '/lists/:id' do
-  
+  @list = List.find_by_id(params[:id])
+
+  if @list.update(params[:list])
+    redirect "/lists"
+  else
+    @errors = @list.errors.full_messages
+    erb :"/lists/edit"
+  end
 end
 
 # delete
 delete '/lists/:id' do
+  List.find_by_id(params[:id]).destroy
 
+  redirect "/lists"
 end

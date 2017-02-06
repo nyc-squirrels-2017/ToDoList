@@ -8,7 +8,12 @@
           <a href="/lists/<%= list.id %>"> <%= list.name.capitalize %> </a>
           <ul>
             <li><a href="/lists/<%= list.id %>/edit">edit</a></li>
-            <li><a href="/lists/<%= list.id %>/delete">delete</a></li>
+            <li>
+              <form action="/lists/<%= list.id %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input type="submit" value="delete">
+              </form>
+            </li>
           </ul>
         </li>
       <% end %>
