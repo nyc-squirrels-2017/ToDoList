@@ -1,0 +1,8 @@
+<%= erb :'/partials/_errors' %>
+
+<form class="list-submit" action="/lists" method="post">
+  <label for="list">Title</label>
+  <input type="text" name="list[title]" id="list">
+
+  <input type="submit" value="Create List">
+</form>

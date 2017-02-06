@@ -1,0 +1,9 @@
+<div class="lists">
+  <ul>
+      <%@lists.each do |list|%>
+      <li><a href="/lists/<%=list.id%>"><%= list.title%></a></li>
+      <%end%>
+  </ul>
+
+  <a href="/lists/new">Add List</a> <br> <br>
+</div>
