@@ -1,3 +1,9 @@
 class User < ActiveRecord::Base
-  # Remember to create a migration!
+    has_many :lists, dependent: :destroy
+    has_many :tasks, dependent: :destroy
+
+    validates :username, :email, :password, presence: true
+    validates :password, length: { minimum: 6 }
+    
+    has_secure_password
 end

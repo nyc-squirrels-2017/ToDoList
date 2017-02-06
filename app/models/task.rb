@@ -1,3 +1,6 @@
 class Task < ActiveRecord::Base
-  # Remember to create a migration!
+    belongs_to :list, dependent: :destroy
+    belongs_to :user, dependent: :destroy
+    
+    validates :name, :due_date, :user_id, :list_id, presence: true
 end
