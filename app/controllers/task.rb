@@ -17,7 +17,7 @@ get '/tasks/:id' do
 end
 
 
-post '/list/:id/tasks' do
+post '/lists/:id/tasks' do
   @task = Task.new(params[:task])
   @task.list_id = params[:id]
     if @task.save
@@ -25,4 +25,11 @@ post '/list/:id/tasks' do
     else
       erb :'/tasks/new'
     end
+end
+
+
+delete '/lists/:id/tasks/:task_id/delete' do
+  @task = Task.find_by(id: params[:task_id])
+  @task.destroy
+  redirect "/lists"
 end

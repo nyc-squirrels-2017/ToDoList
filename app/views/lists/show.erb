@@ -2,7 +2,13 @@
 <h1> Here is your <%= @list.name %> List</h1>
 <ul>
 <% @tasks.each do |task|%>
-  <li><%= task.task_name%></li>
+  <li><p><%= task.task_name%></p>
+    <form class="delete-task" action="'/lists/:id/tasks/:task_id/delete'" method="post">
+      <input type="hidden" name="_method" value="delete">
+      
+    </form>
+  </li>
+
   <%end%>
 </ul>
 <a href="/lists"> Return To All Your lists.</a>
