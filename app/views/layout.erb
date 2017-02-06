@@ -15,9 +15,13 @@
   <nav>
     <ul class="container">
       <li><a href="/"><i id="brand" class="fa fa-trello" aria-hidden="true"></i><span>Kendylist</span></a></li>
-      <li class="right"><a href="/">Logout</a></li>
-      <li class="right"><a href="/sessions/login">Login</a></li>
-      <li class="right"><a href="/users/register">Register</a></li>
+      
+      <% if login? %>
+        <li class="right"><a href="/sessions/logout">Logout</a></li>
+      <% else %>
+        <li class="right"><a href="/sessions/login">Login</a></li>
+        <li class="right"><a href="/users/register">Register</a></li>
+      <% end %>
     </ul>
   </nav>
   <div class="container">

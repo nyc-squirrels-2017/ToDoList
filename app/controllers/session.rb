@@ -19,5 +19,7 @@ post '/sessions' do
 end
 
 get '/sessions/logout' do
-    
+    require_login
+    remove_session
+    redirect "/"
 end
