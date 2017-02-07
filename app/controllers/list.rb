@@ -4,18 +4,25 @@ end
 
 # new route
 get '/lists/new' do
-
-  erb :"/lists/new"
+  if request.xhr?
+    erb :"/lists/_newform", layout: false
+  else
+    erb :"/lists/new"
+  end
 end
 
 post '/lists' do
   list = current_user.lists.create(params[:list])
 
   if list.save
-    redirect '/lists'
+    if request.xhr?
+      erb :"/lists/_onelist", layout: false, locals: { list: list }
+    else
+      redirect '/lists'
+    end
   else
-    @errors = list.errors.full_messages
-    erb :"/lists/new"
+    # @errors = list.errors.full_messages
+    # erb :"/lists/new"
   end
 end
 
@@ -35,14 +42,19 @@ end
 # update
 get '/lists/:id/edit' do
   @list = List.find_by_id(params[:id])
-  erb :"/lists/edit"
+
+  if request.xhr?
+      erb :"/lists/_editform", layout: false, locals: { list: @list }
+  else
+    erb :"/lists/edit"
+  end
 end
 
 put '/lists/:id' do
   @list = List.find_by_id(params[:id])
 
   if @list.update(params[:list])
-    redirect "/lists"
+      redirect "/lists"
   else
     @errors = @list.errors.full_messages
     erb :"/lists/edit"
@@ -53,5 +65,10 @@ end
 delete '/lists/:id' do
   List.find_by_id(params[:id]).destroy
 
-  redirect "/lists"
+  if request.xhr?
+    content_type :json
+    {id: params[:id]}.to_json
+  else
+    redirect "/lists"
+  end
 end

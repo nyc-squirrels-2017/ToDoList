@@ -58,10 +58,16 @@ nav li.right {
   /*align-items: center;*/
   float: left;
   border: 5px solid #444;
-  margin: 40px 10px;
+  margin: 50px 10px 0px 0px;
   min-height: 200px;
   width: 200px;
-  transition: 1.0s;
+  transition: 2.0s;
+}
+
+.clear-float {
+  clear: left;
+  display: inline-block;
+  width: 100px;
 }
 
 .hidden {

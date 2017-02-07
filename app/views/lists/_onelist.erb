@@ -1,0 +1,14 @@
+<section id="lists_<%= list.id %>">
+  <div class="card">
+    <a href="/lists/<%= list.id %>">
+      <p> <%= list.name.capitalize %> </p>
+    </a>
+  </div>
+  <div>
+    <a id="edit-list-form" class="clear-float" href="/lists/<%= list.id %>/edit">edit</a>
+    <form id="delete-list-form" class="clear-float" action="/lists/<%= list.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete">
+    </form>
+  </div>
+</section>

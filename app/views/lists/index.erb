@@ -1,24 +1,12 @@
 <div class="lists-container">
   <h1>All your lists</h1>
-  <a href="/lists/new">Create New List</a>
+  <a class="new-link" href="/lists/new">Create New List</a>
   <section class="lists-cards">
       <% if @lists %>
         <% @lists.each do |list| %>
-        <div class="card">
-          <a href="/lists/<%= list.id %>">
-            <p> <%= list.name.capitalize %> </p>
-          </a>
-        </div>
 
-            <!-- <ul>
-              <li><a href="/lists/<%= list.id %>/edit">edit</a></li>
-              <li>
-                <form action="/lists/<%= list.id %>" method="post">
-                  <input type="hidden" name="_method" value="delete">
-                  <input type="submit" value="delete">
-                </form>
-              </li>
-            </ul> -->
+          <%= erb :"/lists/_onelist", locals: {list: list} %>
+
         <% end %>
       <% end %>
   </section>

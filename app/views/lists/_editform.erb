@@ -1,0 +1,6 @@
+<form action="/lists/<%= @list.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="list[name]" value="<%= @list.name %>">
+  <input type="submit" value="Update">
+  <a href="/lists">Cancel</a>
+</form>
