@@ -29,5 +29,5 @@ end
 delete '/lists/:list_id/tasks/:task_id' do
   task = Task.find_by(id: params[:task_id])
   task.destroy()
-  redirect "/lists/#{params[:list_id]}"
+  redirect "/lists/#{params[:list_id]}" unless request.xhr?
 end

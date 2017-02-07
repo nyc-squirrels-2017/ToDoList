@@ -1,9 +1,10 @@
-<div class="lists">
-  <ul>
+<div id="lists">
+  <h1>Here are your To-Do-Lists</h1>
+  <ul id=list-container>
       <%@lists.each do |list|%>
-      <li><a href="/lists/<%=list.id%>"><%= list.title%></a></li>
+      <%= erb :'/partials/_single_user', locals:{list:list} %>
       <%end%>
   </ul>
 
-  <a href="/lists/new">Add List</a> <br> <br>
+  <a id="add-list"href="/lists/new">Add List</a> <br> <br>
 </div>

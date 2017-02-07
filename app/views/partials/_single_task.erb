@@ -1,0 +1,7 @@
+<li><%=task.description%> <br>
+  <a href="/lists/<%=@list.id%>/tasks/<%=task.id%>/edit">Edit</a>
+  <form class="delete-task" action="/lists/<%=@list.id%>/tasks/<%=task.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input  type="submit" value="Delete">
+  </form>
+</li>

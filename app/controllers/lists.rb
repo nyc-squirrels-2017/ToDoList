@@ -4,7 +4,11 @@ get '/lists' do
 end
 
 get '/lists/new' do #make sure the new form page goes before the show page
-  erb :'/lists/new'
+  if request.xhr?
+    erb :'/lists/new', layout: false
+  else
+    erb :'/lists/new'
+  end
 end
 
 get "/lists/:id" do
@@ -20,11 +24,21 @@ end
 post '/lists' do
   list = List.new(params[:list])
   list.user_id = session[:user_id]
-  if list.save
-    redirect '/lists' #have to update this later
+  if request.xhr?
+    if list.save
+      erb :"/partials/_single_user", layout: false, locals:{list:list}
+    else
+      status 422
+      @errors = list.errors.full_messages
+      erb :'/partials/_errors', layout: false
+    end
   else
-    @errors = list.errors.full_messages
-    erb :'/lists/new'
+    if list.save
+      redirect '/lists' #have to update this later
+    else
+      @errors = list.errors.full_messages
+      erb :'/lists/new'
+    end
   end
 end
 

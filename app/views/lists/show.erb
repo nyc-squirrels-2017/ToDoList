@@ -1,18 +1,12 @@
 <div class="lists">
-  <ol>
+  <ol id="task-container">
     <h1><%=@list.title%></h1>
       <%@list.tasks.each do |task|%>
-      <li><%=task.description%> <br>
-        <a href="/lists/<%=@list.id%>/tasks/<%=task.id%>/edit">Edit</a>
-        <form action="/lists/<%=@list.id%>/tasks/<%=task.id%>" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Delete">
-        </form>
-      </li>
+        <%= erb :'/partials/_single_task', locals:{task:task} %>
       <%end%>
   </ol>
 
-  <form action="/lists/<%=@list.id%>" method="post">
+  <form class="delete" action="/lists/<%=@list.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete List">
   </form> <br>
