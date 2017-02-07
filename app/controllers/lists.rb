@@ -4,6 +4,7 @@ get '/lists' do
 end
 
 get '/lists/new' do
+  require_user
   @list = List.new
   if request.xhr?
     erb :'partials/_new_list', layout: false
@@ -27,8 +28,8 @@ get '/lists/:id' do
 end
 
 get '/lists/:id/edit' do
-  
   @list = List.find(params[:id])
+  # authorized?(@list.user_id)
   erb :'/lists/edit'
 end
 #update

@@ -11,5 +11,6 @@ def login?
 end
 
 def authorized?(id)
-  current_user.id === id
+ current_user.id === id
+  # redirect '/' unless current_user.id === id
 end
