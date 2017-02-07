@@ -1,0 +1,14 @@
+<div>
+  <h1>Edit task</h1>
+  <%= erb :"partials/_errors" %>
+  <form action="/lists/<%= @list.id %>/tasks/<%= @task.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <label for="task">Task: </label>
+    <input id="task" type="text" name="task[name]" value="<%= @task.name %>"><br><br>
+    <label for="due_date">Due Date: </label>
+    <input id="due_date" type="date" name="task[due_date]" value="<%= @task.convert_time %>">
+    <input type="hidden" name="task[user_id]" value="<%= current_user.id %>">
+    <input type="submit" value="Edit task">
+    <a href="/lists/<%= @list.id %>">Cancel</a>
+  </form>
+</div>

@@ -37,6 +37,8 @@ ActiveRecord::Base.establish_connection(
   :port     => db.port,
   :username => db.user,
   :password => db.password,
+  # :username => ENV['USERNAME'],
+  # :password => ENV['PASSWORD'],
   :database => DB_NAME,
   :encoding => 'utf8'
 )

@@ -1,0 +1,14 @@
+<li>
+  <%= task.name %>
+  -
+  <%= task.convert_date %>
+  <ul>
+    <li><a href="/lists/<%= @list.id %>/tasks/<%= task.id %>/edit">edit</a></li>
+    <li>
+      <form action="/lists/<%= @list.id %>/tasks/<%= task.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="delete">
+      </form>
+    </li>
+  </ul>
+</li>

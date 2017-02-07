@@ -1,0 +1,7 @@
+<h3>Tasks</h3>
+<a href="/lists/<%= @list.id %>/tasks/new">create new</a>
+<ol>
+  <% @list.tasks.each do |task|  %>
+    <%= erb :"/tasks/show", locals: { task: task } %>
+  <% end %>
+</ol>
