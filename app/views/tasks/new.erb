@@ -1,0 +1,17 @@
+<div class="new-task">
+
+  <%= erb :'/partials/_errors'%>
+  <h1> Add a New Task </h1>
+
+  <form action="/lists/<%=@list.id%>/tasks" method="POST">
+    <p>
+      <label for="name">Task:</label>
+      <input type="text" name="task[task]" placeholder="Please enter your task" required size="30">
+    </p>
+
+    <p>
+      <input type="submit" name="submit" value="Add a New Task">
+    </p>
+
+  </form>
+</div>

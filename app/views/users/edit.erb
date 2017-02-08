@@ -1,0 +1,28 @@
+<div class="edit-user">
+
+  <%= erb :'/partials/_errors'%>
+  <h1> Edit Profile </h1>
+  <h2><%=current_user.username.capitalize%></h2>
+
+  <form action="/users/<%=current_user.id%>" method="POST">
+    <input type="hidden" name="_method" value="put">
+    <p>
+      <label for="username">Username:</label>
+      <input type="text" name="user[username]" placeholder="Please enter your username" required size="30">
+    </p>
+
+    <p>
+      <label for="email">Email</label>
+      <input type="text" name="user[email]" placeholder="Please enter your email address" required size="30">
+    </p>
+
+    <p>
+      <label for="password">Password</label>
+      <input type="password" name="user[password]" placeholder="Please enter your password" required size="30">
+    </p>
+
+    <p>
+      <input type="submit" name="submit" value="Edit">
+    </p>
+  </form>
+</div>

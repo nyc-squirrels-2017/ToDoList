@@ -1,0 +1,18 @@
+<div class="edit-list">
+
+  <%= erb :'/partials/_errors'%>
+  <h1> Edit <%=@list.name%> </h1>
+
+  <form action="/lists" method="POST">
+    <input type="hidden" name="_method" value="put">
+    <p>
+      <label for="name">Name:</label>
+      <input type="text" name="list[name]" placeholder="Please enter your list name" required size="30">
+    </p>
+
+    <p>
+      <input type="submit" name="submit" value="Edit List">
+    </p>
+
+  </form>
+</div>

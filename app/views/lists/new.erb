@@ -1,0 +1,17 @@
+<div class="new-list">
+
+  <%= erb :'/partials/_errors'%>
+  <h1> Create a New List </h1>
+
+  <form action="/lists" method="POST">
+    <p>
+      <label for="name">Name:</label>
+      <input type="text" name="list[name]" placeholder="Please enter your list name" required size="30">
+    </p>
+
+    <p>
+      <input type="submit" name="submit" value="Create New List">
+    </p>
+
+  </form>
+</div>

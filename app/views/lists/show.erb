@@ -1,0 +1,27 @@
+<div class = "one-list">
+<h1><%=@list.name%></h1>
+
+<h2>Tasks in <%=@list.name%>:</h2>
+<ol>
+  <%@list.tasks.each do |task|%>
+<li> <%=task.task%> </li> <br>
+
+<a href= "/lists/<%=@list.id%>/tasks/<%=task.id%>/edit"> Edit Task</a><br>
+<br>
+<form class="delete-task" action="/lists/<%=@list.id%>/tasks/<%=task.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" name="delete-task" value="Delete Task">
+</form><br>
+  <%end%>
+</ol>
+
+<a href="/lists/<%=@list.id%>/tasks/new">Add Task</a>
+
+<a href="/lists/<%=@list.id%>/edit">Edit List</a><br><br>
+
+<form class="delete list" action="/lists/<%@list.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" name="delete-list" value="Delete List">
+</form>
+
+</div>
