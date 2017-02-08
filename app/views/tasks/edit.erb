@@ -1,7 +1,10 @@
-<form action="/lists/<%=@list.id%>/tasks/<%=@task.id%>" method="post">
+<form class="task-edit" action="/lists/<%=@list.id%>/tasks/<%=@task.id%>" method="post">
   <input type="hidden" name="_method" value="put">
+  <div class="checkbox-edit">
+    <label for="checkbox-edit">Complete</label>
+    <input  type="checkbox" name="task[completed]" value="true"><br>
+  </div>
   <label for="task">Description</label>
-  <input type="checkbox" name="task[completed]" value="true">
   <input type="text" name="task[description]" value="<%=@task.description%>"id="task">
   <input type="submit" value="Update">
 </form>

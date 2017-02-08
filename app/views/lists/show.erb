@@ -1,4 +1,4 @@
-<div class="lists">
+<div class="task-list">
   <ol id="task-container">
     <h1><%=@list.title%></h1>
       <%@list.tasks.each do |task|%>
@@ -12,7 +12,6 @@
   </form> <br>
 
   <a href="/lists/<%=@list.id%>/edit">Edit Name</a> <br> <br>
-  <a href="/lists/<%=@list.id%>/tasks/new">Add Task</a> <br> <br>
-
+  <a id="add-task" href="/lists/<%=@list.id%>/tasks/new">Add Task</a> <br> <br>
   <a href="/lists">Go Back</a>
 </div>

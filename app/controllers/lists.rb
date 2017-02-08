@@ -4,6 +4,7 @@ get '/lists' do
 end
 
 get '/lists/new' do #make sure the new form page goes before the show page
+  require_user
   if request.xhr?
     erb :'/lists/new', layout: false
   else
@@ -13,11 +14,13 @@ end
 
 get "/lists/:id" do
   @list = List.find_by(id: params[:id])
+  authorized_user
   erb :'/lists/show'
 end
 
 get "/lists/:id/edit" do
   @list = List.find_by(id: params[:id])
+  authorized_user
   erb :'/lists/edit'
 end
 

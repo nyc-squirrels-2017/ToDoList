@@ -1,5 +1,10 @@
-<li><%=task.description%> <br>
-  <a href="/lists/<%=@list.id%>/tasks/<%=task.id%>/edit">Edit</a>
+<li>
+  <strong><%=task.description%> </strong><br>
+  <form class="checkbox" action="index.html" method="get" style="display: none">
+    <label for="checkbox-edit">Complete</label>
+    <input type="checkbox" name="task[completed]" value="true"><br>
+  </form>
+  <a class="edit-task" href="/lists/<%=@list.id%>/tasks/<%=task.id%>/edit">Edit</a>
   <form class="delete-task" action="/lists/<%=@list.id%>/tasks/<%=task.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input  type="submit" value="Delete">
